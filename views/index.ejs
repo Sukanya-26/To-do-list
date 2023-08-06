@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today</title>
+     <link rel="stylesheet" href="/main.css"> 
+    
+</head>
+<body>
+    <%#- include("header.ejs") %>
+    <button ><a href="/">Today</a></button>
+    <button><a href="/work">Work</a></button>
+   <% const d = new Date(); %>
+    <h1 > 
+ <%= d.getDate()%>/<%= d.getMonth()+1 %>/<%= d.getFullYear() %>  
+    </h1>
+    <div class="item">
+    <div class="box"><p><input type="checkbox" name="check">Organising wardrode</p></div>
+    <div class="box"><p><input type="checkbox" name="check">clean room</p>
+    </div>
+    
+    <% for( let i = 0; i < nitem.length; i++ ) { %>
+        <%# console.log(nitem[i]) %>
+        <div class="box"><p> <input type="checkbox" name="check">    
+     <%= nitem[i] %></p></div>
+    <% } %>
+</div>
+            <form action="/" method="POST">
+          <input type="checkbox" name="check">
+          <input type="text" placeholder="New item" name="newItem">
+          <button type="submit" name="submit" class="bform">+</button>
+         </form>
+         
+        <footer>Made by Sukanya</footer> 
+        
+       
+    
+</body>
+</html>

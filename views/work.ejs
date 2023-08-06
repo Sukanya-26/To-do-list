@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work</title>
+    <link rel="stylesheet" href="/main.css"> 
+</head>
+<body>
+    <%#- include("header.ejs") %>
+    <button ><a href="/">Today</a></button>
+    <button><a href="/work">Work</a></button>
+   <h1>Work</h1>
+   <div class="item">
+    <div class="box"><p><input type="checkbox" name="check">check emails</p>
+        </div>
+       
+    
+    <% for( let i = 0; i < witem.length; i++ ) { %>
+        <%# console.log(nitem[i]) %>
+        <div class="box"><p> <input type="checkbox" name="check">    
+     <%= witem[i] %></p></div>
+    <% } %>
+   </div>
+            <form action="/work" method="POST">
+          <input type="checkbox" name="check">
+          <input type="text" placeholder="New item" name="workItem">
+          <button type="submit" name="submit" class="bform">+</button>
+         </form>
+         
+            
+         <footer>Made by Sukanya</footer>
+</body>
+</html>
